@@ -1,0 +1,7 @@
+Điều gì xảy ra nếu bạn viết sai các từ sau trong HelloWorld.java
+• public
+• static
+• void
+• args
+
+Nếu viết sai các từ khóa sau trong chương trình HelloWorld.java, chương trình không biên dịch và sẽ nhận được một lỗi cú pháp.

@@ -1,0 +1,7 @@
+Điều gì xảy ra nếu bạn bỏ các từ sau trong HelloWorld.java
+• public
+• static
+• void
+• args
+
+Nếu bỏ các từ khóa sau khỏi chương trình HelloWorld.java, thì chương trình sẽ không biên dịch và không chạy được.

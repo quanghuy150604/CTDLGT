@@ -1,0 +1,17 @@
+Điều gì xảy ra nếu bạn gõ các dòng lệnh sau (chương trình Hi.java)
+• java Hi
+• java Hi @!&^%
+• java Hi 1234
+• java Hi.class Bob
+• java Hi.java Bob
+• java Hi Alice Bob
+
+java Hi @!&^% lỗi do kí tự đặc biệt không hợp lệ
+
+java Hi 1234-> Hi, 1234 thôi không có lỗi
+
+java Hi.class lỗi do JVM không tìm thấy Hi.class
+
+java Hi.java Bob -> Hi, Bob nếu đã biên dịch nhưng chương trình sẽ chạy lâu hơn
+
+java Hi Alice Bob -> Hi, Alice (Bob bị bỏ qua do trong code của b không nhắc đến args[1] mà chỉ có args[0]

@@ -1,0 +1,8 @@
+Chương trình đã cung cấp có một số vấn đề khi biên dịch
+Lỗi và vấn đề chính là:
+
+1. Phương thức main không có tham số String[] args. Phương thức public static void main(String[] args) là phương thức mà JVM (Máy ảo Java) sẽ tìm để bắt đầu thực thi chương trình Java. Nếu không có tham số String[] args, chương trình sẽ không nhận đối số dòng lệnh và không thể chạy chính xác.
+
+2. Thay vào đó, đã định nghĩa phương thức main với không có tham số. Điều này làm cho phương thức không phải là một điểm khởi đầu hợp lệ cho chương trình Java.
+
+Khi cố gắng biên dịch chương trình này, bạn sẽ gặp lỗi biên dịch.
