@@ -8,11 +8,19 @@ public class _3_sum {
 
         Arrays.sort(a);
 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                for (int k = j + 1; k < a.length; k++) {
-                    if (a[j] + a[i] + a[k] == 0) {
-                        StdOut.println(a[i] + " " + a[j] + " " + a[k]);
+        for (int i = 0; i < a.length - 2; i++) {
+            int j = i + 1;
+            for (int k = a.length - 1; k >= i + 1; k--){
+                while (j < k){
+                    if (a[i] + a[j] + a[k] == 0){
+                        System.out.println(a[i] + " " + a[j] + " " + a[k]);
+                        j++;
+                    }
+                    else if (a[i] + a[j] + a[k] < 0){
+                        j++;
+                    }
+                    else if (a[i] + a[j] + a[k] > 0){
+                        break;
                     }
                 }
             }
