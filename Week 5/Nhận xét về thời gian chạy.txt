@@ -1,0 +1,5 @@
+Dữ liệu ngẫu nhiên: Với dữ liệu ngẫu nhiên, thuật toán Selection Sort hoạt động độc lập với dữ liệu hiện có. Thời gian thực hiện thuật toán sẽ tương đối ổn định với các tập dữ liệu khác nhau và có độ phức tạp O(n^2).
+
+Dữ liệu (gần) sắp xếp: Thuật toán Selection Sort vẫn phải duyệt qua toàn bộ mảng, vì nó tìm kiếm phần tử nhỏ nhất trong phần còn lại của mảng. Do đó, thời gian thực hiện không giảm đáng kể khi dữ liệu (gần) sắp xếp. Thời gian chạy cũng có độ phức tạp O(n^2) trong trường hợp này.
+
+Nhận xét về thời gian chạy: Thuật toán sắp xếp chọn có độ phức tạp O(n^2) trong trường hợp tốt nhất, trường hợp trung bình và trường hợp xấu nhất. Thời gian chạy của nó phụ thuộc vào số lượng phần tử trong mảng và không quan trọng trạng thái sắp xếp của dữ liệu.
