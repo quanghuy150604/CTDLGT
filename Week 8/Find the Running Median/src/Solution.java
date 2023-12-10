@@ -26,9 +26,7 @@ public class Solution {
                 maxPQ.add(minPQ.poll());
             }
 
-            if (maxPQ.size() == minPQ.size()) {
-                System.out.println(maxPQ.peek() / 2.0 + minPQ.peek() / 2.0);
-            } else System.out.println(maxPQ.peek());
+            System.out.println(maxPQ.peek());
         }
     }
 }

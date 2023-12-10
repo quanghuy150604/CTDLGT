@@ -1,25 +1,61 @@
+import java.io.IOException;
+import java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        int[] a = new int[n];
-        int[] b = new int[100];
-        int size = 1;
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        Queue<Integer> minPQ = new PriorityQueue<>(Collections.reverseOrder());
+        Queue<Integer> maxPQ = new PriorityQueue<>();
         for (int i = 0; i < n; i++) {
-            a[i] = input.nextInt();
-        }
-        b[0] = 0;
-        for (int i = 0; i < n; i++){
-            int old_size = size;
-            for (int j = 0; j < old_size; j++){
-                b[size] = b[j] + a[i];
-                size++;
+            int q = scanner.nextInt();
+            if (minPQ.isEmpty() || minPQ.peek() >= q) {
+                minPQ.add(q);
+            } else {
+                maxPQ.add(q);
+            }
+            if (minPQ.size() > maxPQ.size() + 1) {
+                maxPQ.add(minPQ.poll());
+            } else if (minPQ.size() < maxPQ.size()) {
+                minPQ.add(maxPQ.poll());
             }
         }
-        for (int i = 1; i < size; i++){
-            System.out.print(b[i] + " ");
+        for (int i = 0; i < k; i++) {
+            int q = scanner.nextInt();
+            switch(q) {
+                case 1:
+                    int number = scanner.nextInt();
+                    if (minPQ.isEmpty() || minPQ.peek() >= number) {
+                        minPQ.add(number);
+                    } else {
+                        maxPQ.add(number);
+                    }
+                    if (minPQ.size() > maxPQ.size() + 1) {
+                        maxPQ.add(minPQ.poll());
+                    } else if (minPQ.size() < maxPQ.size()) {
+                        minPQ.add(maxPQ.poll());
+                    }
+                    break;
+                case 2:
+                    minPQ.poll();
+                    if (minPQ.size() > maxPQ.size() + 1) {
+                        maxPQ.add(minPQ.poll());
+                    } else if (minPQ.size() < maxPQ.size()) {
+                        minPQ.add(maxPQ.poll());
+                    }
+                    break;
+                case 3:
+                    if (!minPQ.isEmpty()) {
+                        System.out.println(minPQ.peek());
+                    } else {
+                        System.out.println(0);
+                    }
+                    break;
+            }
         }
     }
 }
